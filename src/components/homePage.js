@@ -37,7 +37,7 @@ class HomePage extends Component {
 
         <button className='button'
           onClick={this.resetForm}>
-          "Create Account"
+          {this.state.form}
         </button>
       </div>
     )
