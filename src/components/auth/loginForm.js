@@ -10,6 +10,7 @@ class LoginForm extends Component {
     }
     this.handleChangeUsername = this.handleChangeUsername.bind(this)
     this.handleChangePassword = this.handleChangePassword.bind(this)
+    this.getToken = this.getToken.bind(this)
   }
   handleChangeUsername(event) {
     this.setState({username: event.target.value})
@@ -17,8 +18,9 @@ class LoginForm extends Component {
   handleChangePassword(event) {
     this.setState({password: event.target.value})
   }
-  getToken(event) {
-    axios.get('google.com', {
+  getToken() {
+    console.log(this.state.username)
+    axios.get('http://localhost:3000/api/v1/sessions', {
       params: {
       username: this.state.username,
       password: this.state.password
@@ -44,17 +46,3 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
-
-// React.createElement('form', {className: 'ContactForm'},
-//   React.createElement('input', {
-//     type: 'text',
-//     placeholder: 'Name (required)',
-//     value: this.props.value,
-//   }),
-//   React.createElement('input', {
-//     type: 'text',
-//     placeholder: 'Password (required)',
-//     value: this.props.value,
-//   }),
-//   React.createElement('button', {type: 'submit'}, "Login")
-// )
