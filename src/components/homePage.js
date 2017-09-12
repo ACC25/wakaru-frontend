@@ -1,22 +1,47 @@
 import React, { Component } from 'react';
+import LoginForm from './auth/loginForm.js'
+import CreateAccountForm from './auth/createAccountForm.js'
 
 class HomePage extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      form: "login"
+    }
+    this.resetForm = this.resetForm.bind(this)
+  }
+
+  resetForm(event) {
+    const switcher = {
+      login: "create",
+      create: "login"
+    }
+    this.setState({
+      form: switcher[this.state.form]
+    })
+  }
+
   render() {
+    const forms = {
+      login: <LoginForm/>,
+      create: <CreateAccountForm/>
+    }
+    const unauthenticated = forms[this.state.form]
+    const authenticated = <div></div>
+    const body = this.props.authenticated
+      ? authenticated
+      : unauthenticated
     return (
-      React.createElement('form', {className: 'ContactForm'},
-        React.createElement('input', {
-          type: 'text',
-          placeholder: 'Name (required)',
-          value: this.props.value,
-        }),
-        React.createElement('input', {
-          type: 'text',
-          placeholder: 'Password (required)',
-          value: this.props.value,
-        }),
-        React.createElement('button', {type: 'submit'}, "Login")
-      )
+      <div>
+        { body }
+
+        <button className='button'
+          onClick={this.resetForm}>
+          "Create Account"
+        </button>
+      </div>
     )
+
   }
 }
 

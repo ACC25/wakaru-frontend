@@ -3,9 +3,15 @@ import './App.css';
 import HomePage from './components/homePage.js'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      authenticated: false
+    }
+  }
   render() {
     return (
-      <HomePage/>
+      <HomePage authenticated={this.state.authenticated}/>
     )
   }
 }
