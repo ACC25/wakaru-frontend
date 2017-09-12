@@ -8,9 +8,10 @@ class CreateAccountForm extends Component {
       password: ""
     }
   }
+
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.getToken}>
         <label>
           <input type="text" placeholder="Choose Username" value={this.state.username} onChange={this.handleChange} />
           <input type="text" placeholder="Create Password" value={this.state.password} onChange={this.handleChange} />

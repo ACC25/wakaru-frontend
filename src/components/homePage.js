@@ -28,16 +28,16 @@ class HomePage extends Component {
     }
     const unauthenticated = forms[this.state.form]
     const authenticated = <div></div>
-    const body = this.props.authenticated
+    const bodyForms = this.props.authenticated
       ? authenticated
       : unauthenticated
     return (
       <div>
-        { body }
+        { bodyForms }
 
         <button className='button'
           onClick={this.resetForm}>
-          {this.state.form}
+          Switch Forms
         </button>
       </div>
     )
