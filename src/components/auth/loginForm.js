@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+const $ = require('jquery');
+
 
 class LoginForm extends Component {
   constructor(props){
@@ -18,17 +20,19 @@ class LoginForm extends Component {
   handleChangePassword(event) {
     this.setState({password: event.target.value})
   }
-  getToken() {
-    console.log(this.state.username)
-    axios.get('http://localhost:3000/api/v1/sessions', {
+
+  getToken(event) {
+    event.preventDefault()
+    axios.get('http://localhost:3000/api/v1/session', {
       params: {
       username: this.state.username,
       password: this.state.password
     }
-    }).then((foods) => {
-      console.log(foods)
-    }).catch((error) => {
-      console.error(error)
+  }).then((response) => {
+    localStorage.setItem("token", response.data["token"])
+    })
+    .catch((error) => {
+      alert("Invalid login credentials")
     })
   }
 
