@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Forms from './components/forms.js'
+import HomePage from './components/homePage.js'
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class App extends Component {
     this.checkAuth = this.checkAuth.bind(this)
   }
   checkAuth() {
-    this.state.loading = true
+    // this.state.loading = true
     // this.setState({authenticated: true}, this.setState({loading: false})) : null
     // const loading = this.state.loading === true ? <h1>LOADING</h1> : null
     // {loading}
@@ -19,7 +20,7 @@ class App extends Component {
   }
   render() {
     // const homePage = <HomePage authenticated={this.state.authenticated} auth={this.checkAuth} />
-    const authenticated = this.state.authenticated === true ? <h1>Huraay</h1> : <Forms authenticated={this.state.authenticated} auth={this.checkAuth} />
+    const authenticated = this.state.authenticated === true ? <HomePage/> : <Forms authenticated={this.state.authenticated} auth={this.checkAuth} />
     return (
       <div>
         {authenticated}

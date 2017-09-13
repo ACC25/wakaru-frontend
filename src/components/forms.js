@@ -23,7 +23,6 @@ class Forms extends Component {
   }
 
   render() {
-    console.log(this.props);
     const forms = {
       login: <LoginForm auth={this.props.auth}/>,
       create: <CreateAccountForm auth={this.props.auth}/>
