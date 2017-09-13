@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import LoginForm from './auth/loginForm.js'
 import CreateAccountForm from './auth/createAccountForm.js'
 
-class HomePage extends Component {
+class Forms extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      form: "login"
+      form: "login",
+      authenticated: this.props.authenticated
     }
     this.resetForm = this.resetForm.bind(this)
   }
@@ -22,15 +23,17 @@ class HomePage extends Component {
   }
 
   render() {
+    console.log(this.props);
     const forms = {
-      login: <LoginForm/>,
-      create: <CreateAccountForm/>
+      login: <LoginForm auth={this.props.auth}/>,
+      create: <CreateAccountForm auth={this.props.auth}/>
     }
     const unauthenticated = forms[this.state.form]
     const unauthenticatedButton = <button className='button'onClick={this.resetForm}> Switch Forms </button>
     const authenticated = <div></div>
     const bodyForms = this.props.authenticated ? authenticated : unauthenticated
     const switchButton = this.props.authenticated ? authenticated : unauthenticatedButton
+
     return (
       <div>
         { bodyForms }
@@ -41,4 +44,4 @@ class HomePage extends Component {
   }
 }
 
-export default HomePage;
+export default Forms;

@@ -29,6 +29,7 @@ class LoginForm extends Component {
     }
   }).then((response) => {
     localStorage.setItem("token", response.data["token"])
+    this.props.auth()
     })
     .catch((error) => {
       alert("Invalid login credentials")

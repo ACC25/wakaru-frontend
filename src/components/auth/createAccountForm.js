@@ -25,6 +25,7 @@ class CreateAccountForm extends Component {
     axios.post('http://localhost:3000/api/v1/session', { username: this.state.username, password: this.state.password}
   ).then((response) => {
     localStorage.setItem("token", response.data["token"])
+    this.props.auth()
     })
     .catch((error) => {
       alert("Invalid account credentials. Could not create profile.")
