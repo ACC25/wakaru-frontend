@@ -1,27 +1,18 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
-class ActionButton extends Component {
-  render() {
-    return (
-      <button className="action-button" onClick={this.props.onClick}>
-        {this.props.text}
-      </button>
-    )
-  }
-}
+import HomePage from './components/homePage.js'
 
 class App extends Component {
-  handleClick() {
-    alert('Hello!')
+  constructor(props) {
+    super(props)
+    this.state = {
+      authenticated: false
+    }
   }
   render() {
     return (
-      <div className="App">
-        <ActionButton text="Hello" onClick={this.handleClick}/>
-      </div>
-    );
+      <HomePage authenticated={this.state.authenticated}/>
+    )
   }
 }
 
