@@ -9,6 +9,7 @@ class App extends Component {
       authenticated: false
     }
   }
+  
   render() {
     return (
       <HomePage authenticated={this.state.authenticated}/>
