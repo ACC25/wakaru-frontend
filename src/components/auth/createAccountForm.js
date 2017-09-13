@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class CreateAccountForm extends Component {
   constructor(props) {
@@ -7,14 +8,35 @@ class CreateAccountForm extends Component {
       username: "",
       password: ""
     }
+      this.handleChangeUsername = this.handleChangeUsername.bind(this)
+      this.handleChangePassword = this.handleChangePassword.bind(this)
+      this.postAccount = this.postAccount.bind(this)
+  }
+
+  handleChangeUsername(event) {
+    this.setState({username: event.target.value})
+  }
+  handleChangePassword(event) {
+    this.setState({password: event.target.value})
+  }
+
+  postAccount(event) {
+    event.preventDefault()
+    axios.post('http://localhost:3000/api/v1/session', { username: this.state.username, password: this.state.password}
+  ).then((response) => {
+    localStorage.setItem("token", response.data["token"])
+    })
+    .catch((error) => {
+      alert("Invalid account credentials. Could not create profile.")
+    })
   }
 
   render() {
     return (
-      <form onSubmit={this.getToken}>
+      <form onSubmit={this.postAccount}>
         <label>
-          <input type="text" placeholder="Choose Username" value={this.state.username} onChange={this.handleChange} />
-          <input type="text" placeholder="Create Password" value={this.state.password} onChange={this.handleChange} />
+          <input type="text" placeholder="Choose Username" value={this.state.username} onChange={this.handleChangeUsername} />
+          <input type="text" placeholder="Create Password" value={this.state.password} onChange={this.handleChangePassword} />
         </label>
         <input type="submit" value="Create Account" />
       </form>

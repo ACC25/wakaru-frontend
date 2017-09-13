@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-const $ = require('jquery');
 
 
 class LoginForm extends Component {
