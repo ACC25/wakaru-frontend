@@ -28,8 +28,8 @@ class BreakDownChart extends Component {
     const data = this.state.loaded == false ? this.getBreakDown() : loadGraph
     return(
       <div className="category">
-        <h1>Email Breakdown</h1>
-        <svg width={300} height={300}>
+        <h1 id="breakdownTitle">Breakdown</h1>
+        <svg width={400} height={400} className="svg">
           <circle cx={150} cy={150} r={50} fill="#1276a8"/>
           <VictoryPie standalone={false}
                       cornerRadius={25}
@@ -37,6 +37,7 @@ class BreakDownChart extends Component {
                       width={300}
                       height={300}
                       innerRadius={75}
+                      title={"history breakdown of documented emails"}
                       data={this.state.categoryData}/>
         </svg>
       </div>
