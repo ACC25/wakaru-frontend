@@ -7,12 +7,11 @@ class HomePage extends Component {
     this.state = {}
   }
 
-
   render() {
     return(
       <div>
       <h1>This is the homepage </h1>
-      <BreakDownChart />
+      <BreakDownChart/>
       </div>
     )
   }
