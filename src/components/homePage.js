@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BreakDownChart from './charts/breakDownChart.js'
+import EmailBreakDownChart from './charts/emailBreakDownChart.js'
 import EmailInput from './emailInput.js'
 import CategoryZeroWords from './homePage/categoryZeroWords.js'
 import CategoryOneWords from './homePage/categoryOneWords.js'
@@ -11,23 +12,23 @@ class HomePage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newEmail: false
+      newEmail: false,
+      emailData: ""
     }
 
     this.getEmailCategory = this.getEmailCategory.bind(this)
   }
 
   getEmailCategory (email, fixture, category) {
-    debugger
     axios.post('http://localhost:3000/api/v1/category', {
-      params: {
+      token: localStorage.getItem("token"),
       question: "",
       response: email,
-      domain: fixture
-    }
+      domain: fixture,
+      category: category
     }).then((response) => {
-      localStorage.setItem("token", response.data["token"])
-      this.props.auth()
+      this.setState({newEmail: true})
+      this.setState({emailData: response.data})
     })
     .catch((error) => {
       alert("Invalid login credentials")
@@ -35,7 +36,7 @@ class HomePage extends Component {
   }
 
   render() {
-    const expandWithGraph = "this would be the new graph"
+    const expandWithGraph = <EmailBreakDownChart data={this.state.emailData}/>
     const expandPage = this.state.newEmail == false ? null : expandWithGraph
     return(
       <div className="container">

@@ -27,3 +27,8 @@
   padding-left: 13%;
   float: left;
 }
+
+.emailBreakDownChart svg {
+  padding-left: 2%;
+  width: 100%;
+}
