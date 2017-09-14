@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { VictoryPie } from 'victory';
 import axios from 'axios'
+import '../card.css';
 
 
 class BreakDownChart extends Component {
@@ -8,7 +9,7 @@ class BreakDownChart extends Component {
     super(props)
     this.state = {
       loaded: false,
-      data: []
+      categoryData: []
     }
     this.getBreakDown = this.getBreakDown.bind(this)
   }
@@ -17,18 +18,18 @@ class BreakDownChart extends Component {
     axios.get('http://localhost:3000/api/v1/category', {
       params: { "token": localStorage.getItem("token")}
     }).then((response) => {
-      this.setState({data: response.data})
+      this.setState({categoryData: response.data})
       this.setState({loaded: true})
     })
   }
 
   render() {
-    const loadGraph = <VictoryPie data={this.state.data}/>
+    const loadGraph = <VictoryPie data={this.state.categoryData}/>
     const data = this.state.loaded == false ? this.getBreakDown() : loadGraph
     return(
-      <div>
-        <h1>This is the breakdown page</h1>
-        <svg width={300} height={300}>
+      <div className="category">
+        <h1 id="breakdownTitle">Breakdown</h1>
+        <svg width={400} height={400} className="svg">
           <circle cx={150} cy={150} r={50} fill="#1276a8"/>
           <VictoryPie standalone={false}
                       cornerRadius={25}
@@ -36,7 +37,8 @@ class BreakDownChart extends Component {
                       width={300}
                       height={300}
                       innerRadius={75}
-                      data={this.state.data}/>
+                      title={"history breakdown of documented emails"}
+                      data={this.state.categoryData}/>
         </svg>
       </div>
     )

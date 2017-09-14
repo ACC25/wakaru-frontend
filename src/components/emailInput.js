@@ -1,0 +1,74 @@
+import React, { Component } from 'react';
+import { RadioGroup, RadioButton } from 'react-radio-buttons';
+import autosize from 'autosize';
+import './card.css';
+
+class EmailInput extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: "",
+      fixture: 0,
+      category: null,
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.radioChange = this.radioChange.bind(this)
+  }
+
+  componentDidMount(){
+    this.textarea.focus();
+    autosize(this.textarea);
+  }
+
+  handleChange(event) {
+    this.setState({email: event.target.value})
+  }
+
+  handleSubmit() {
+    this.props.onClick(this.state.email, this.state.fixture, this.state.category)
+  }
+
+  radioChange(event) {
+    this.setState({category: event})
+  }
+
+  render() {
+    const style = {
+                maxHeight:'250px',
+                minHeight:'170px',
+                minWidth:'800px',
+                  resize:'none',
+                  padding:'9px',
+                  boxSizing:'border-box',
+                  fontSize:'15px'}
+    return (
+      <div className="email">
+        <textarea
+            style={style}
+            ref={c=>this.textarea=c}
+            placeholder="Copy an email into this field for categorization."
+            rows={1}
+            defaultValue={this.state.email}
+            onChange={this.handleChange}/>
+        <RadioGroup onChange={ this.radioChange }>
+          <RadioButton value="0">
+            Good
+          </RadioButton>
+          <RadioButton value="1">
+            Medium
+          </RadioButton>
+          <RadioButton value="2">
+            Bad
+          </RadioButton>
+        </RadioGroup>
+      <button className='submit-button'
+        onClick={this.handleSubmit}>
+        Submit
+      </button>
+      </div>
+    )
+  }
+}
+
+export default EmailInput

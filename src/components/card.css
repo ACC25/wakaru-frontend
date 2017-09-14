@@ -1,0 +1,29 @@
+.divider {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  align-items: center;
+}
+
+.category {
+  height: auto;
+  width: auto;
+  float: left;
+}
+
+.email {
+  padding-left: 25%;
+  position: absolute;
+  float: left;
+
+}
+
+#breakdownTitle {
+  padding-left: 25%;
+}
+
+.svg {
+  padding-left: 13%;
+  float: left;
+}
