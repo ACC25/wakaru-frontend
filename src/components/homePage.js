@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import BreakDownChart from './charts/breakDownChart.js'
 import EmailInput from './emailInput.js'
+import CategoryZeroWords from './homePage/categoryZeroWords.js'
+import CategoryOneWords from './homePage/categoryOneWords.js'
+import CategoryTwoWords from './homePage/categoryTwoWords.js'
 import axios from 'axios'
 import './card.css';
 
 class HomePage extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      newEmail: false
+    }
 
     this.getEmailCategory = this.getEmailCategory.bind(this)
   }
@@ -30,10 +35,20 @@ class HomePage extends Component {
   }
 
   render() {
+    const expandWithGraph = "this would be the new graph"
+    const expandPage = this.state.newEmail == false ? null : expandWithGraph
     return(
-      <div className="divider">
-        <BreakDownChart/>
-        <EmailInput onClick={this.getEmailCategory}/>
+      <div className="container">
+        <div className="divider">
+          <BreakDownChart/>
+          <EmailInput onClick={this.getEmailCategory}/>
+        </div>
+        <div className="divider">
+          { expandPage }
+          <CategoryZeroWords/>
+          <CategoryOneWords/>
+          <CategoryTwoWords/>
+        </div>
       </div>
     )
   }
