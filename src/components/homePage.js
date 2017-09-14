@@ -3,6 +3,7 @@ import BreakDownChart from './charts/breakDownChart.js'
 import EmailInput from './emailInput.js'
 import CategoryZeroWords from './homePage/categoryZeroWords.js'
 import CategoryOneWords from './homePage/categoryOneWords.js'
+import BubbleChart from './charts/bubbleChart.js'
 import CategoryTwoWords from './homePage/categoryTwoWords.js'
 import axios from 'axios'
 import './card.css';
@@ -45,9 +46,10 @@ class HomePage extends Component {
         </div>
         <div className="divider">
           { expandPage }
-          <CategoryZeroWords/>
-          <CategoryOneWords/>
-          <CategoryTwoWords/>
+          <BubbleChart/>
+          // <CategoryZeroWords/>
+          // <CategoryOneWords/>
+          // <CategoryTwoWords/>
         </div>
       </div>
     )
