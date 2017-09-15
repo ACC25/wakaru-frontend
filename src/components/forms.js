@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from './auth/loginForm.js'
 import CreateAccountForm from './auth/createAccountForm.js'
+import './card.css';
 
 class Forms extends Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class Forms extends Component {
     const switchButton = this.props.authenticated ? authenticated : unauthenticatedButton
 
     return (
-      <div>
+      <div className="loginContainer">
         { bodyForms }
         { switchButton }
       </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import '../card.css';
+
 
 class CreateAccountForm extends Component {
   constructor(props) {
