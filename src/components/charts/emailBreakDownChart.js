@@ -9,7 +9,6 @@ class EmailBreakDownChart extends Component {
     this.state = {}
   }
   render() {
-    debugger
     return(
       <div className="emailBreakDownChart">
         <VictoryGroup

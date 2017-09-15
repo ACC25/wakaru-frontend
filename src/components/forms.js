@@ -29,7 +29,7 @@ class Forms extends Component {
       create: <CreateAccountForm auth={this.props.auth}/>
     }
     const unauthenticated = forms[this.state.form]
-    const unauthenticatedButton = <button className='button'onClick={this.resetForm}> Switch Forms </button>
+    const unauthenticatedButton = <button className='button switch'onClick={this.resetForm}> Switch Forms </button>
     const authenticated = <div></div>
     const bodyForms = this.props.authenticated ? authenticated : unauthenticated
     const switchButton = this.props.authenticated ? authenticated : unauthenticatedButton
