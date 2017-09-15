@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import BreakDownChart from './charts/breakDownChart.js'
 import EmailBreakDownChart from './charts/emailBreakDownChart.js'
+import Classification from './homePage/classification.js'
 import EmailInput from './emailInput.js'
-import CategoryZeroWords from './homePage/categoryZeroWords.js'
-import CategoryOneWords from './homePage/categoryOneWords.js'
-import CategoryTwoWords from './homePage/categoryTwoWords.js'
 import axios from 'axios'
 import './card.css';
 
@@ -37,7 +35,9 @@ class HomePage extends Component {
 
   render() {
     const expandWithGraph = <EmailBreakDownChart data={this.state.emailData}/>
+    const expandCategory = <Classification data={this.state.emailData}/>
     const expandPage = this.state.newEmail == false ? null : expandWithGraph
+    const expandClassification = this.state.newEmail == false ? null : expandCategory
     return(
       <div className="container">
         <div className="divider">
@@ -46,9 +46,9 @@ class HomePage extends Component {
         </div>
         <div className="divider">
           { expandPage }
-          <CategoryZeroWords/>
-          <CategoryOneWords/>
-          <CategoryTwoWords/>
+        </div>
+        <div className="divider">
+          { expandClassification }
         </div>
       </div>
     )
