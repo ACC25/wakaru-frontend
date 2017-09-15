@@ -16,7 +16,9 @@ class EmailBreakDownChart extends Component {
           height={800}
           width={800}
           domain={0, 100}
+          domainPadding={40}
           animate={{duration: 2000,onLoad: { duration: 1000 }}}
+          labels={(d) => `y: ${d.y}`}
           labels={["Enjoyment", "Big 5", "Dissatisfaction"]}
           offset={50}
           colorScale={["green", "orange", "red"]}>
