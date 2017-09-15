@@ -31,6 +31,7 @@ class EmailInput extends Component {
 
   radioChange(event) {
     this.setState({category: event})
+    this.setState({fixture: 1})
   }
 
   render() {

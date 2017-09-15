@@ -28,7 +28,7 @@ class BreakDownChart extends Component {
     const data = this.state.loaded == false ? this.getBreakDown() : loadGraph
     return(
       <div className="category">
-        <h1 id="breakdownTitle">Breakdown</h1>
+        <h1 id="breakdownTitle">Wakaru</h1>
         <svg width={400} height={400} className="svg">
           <circle cx={150} cy={150} r={50} fill="#1276a8"/>
           <VictoryPie standalone={false}
