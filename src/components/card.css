@@ -30,6 +30,7 @@
 }
 
 .emailBreakDownChart {
+  height: 300 px;
   padding-left: 35%;
   width: 28%;
 }
@@ -37,6 +38,10 @@
 .overallBreakDown {
   padding-left: 39%;
   width: 28%;
+}
+
+.logoContainer {
+  background-color: red;
 }
 
 .loginContainer {
@@ -73,7 +78,7 @@ input[type="text" i] {
 
 input[type="submit" i] {
   position: relative;
-  left: 36%;
+  left: 37%;
   padding: 10px 15px 11px;
   font-size: 18px;
   background-color: #1276a8;
@@ -107,11 +112,17 @@ button {
 }
 
 button, .switch {
+  margin-top: 3%;
   position: relative;
-  left: 28%
+  left: 26%
 }
 
 #createAccount {
   position: relative;
   left: 26%
+}
+
+#mainLogo {
+  position: relative;
+  left: 33.8%
 }
