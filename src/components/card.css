@@ -30,6 +30,7 @@
 }
 
 .emailBreakDownChart {
+  height: 300 px;
   padding-left: 35%;
   width: 28%;
 }
@@ -37,4 +38,96 @@
 .overallBreakDown {
   padding-left: 39%;
   width: 28%;
+}
+
+.logoContainer {
+  background-color: red;
+}
+
+.loginContainer {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 360px;
+  margin-top: 15%;
+  margin-left: 39%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+input[type="text" i] {
+  position: relative;
+  left: 2.5%;
+  color: #777;
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 12px;
+  margin-left: 18px;
+  width: 290px;
+  height: 35px;
+}
+
+input[type="submit" i] {
+  position: relative;
+  left: 37%;
+  padding: 10px 15px 11px;
+  font-size: 18px;
+  background-color: #1276a8;
+  font-weight: bold;
+  text-shadow: 1px 1px #4d79ff;
+  color: #ffffff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #737373;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+button {
+  padding: 10px 15px 11px;
+  font-size: 18px;
+  background-color: #1276a8;
+  font-weight: bold;
+  text-shadow: 1px 1px #4d79ff;
+  color: #ffffff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #737373;
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+button, .switch {
+  margin-top: 3%;
+  position: relative;
+  left: 26%
+}
+
+#submitButton {
+  position: relative;
+  left: 0%
+}
+
+#createAccount {
+  position: relative;
+  left: 26%
+}
+
+#mainLogo {
+  position: relative;
+  left: 33.8%
 }

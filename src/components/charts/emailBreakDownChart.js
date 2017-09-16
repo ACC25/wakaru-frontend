@@ -9,13 +9,12 @@ class EmailBreakDownChart extends Component {
     this.state = {}
   }
   render() {
-    debugger
     return(
       <div className="emailBreakDownChart">
         <VictoryGroup
           height={800}
           width={800}
-          domain={0, 100}
+          domain={{y: [0, 100]}}
           domainPadding={40}
           animate={{duration: 2000,onLoad: { duration: 1000 }}}
           labels={(d) => `y: ${d.y}`}

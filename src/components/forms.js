@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from './auth/loginForm.js'
 import CreateAccountForm from './auth/createAccountForm.js'
+import './card.css';
 
 class Forms extends Component {
   constructor(props) {
@@ -28,13 +29,16 @@ class Forms extends Component {
       create: <CreateAccountForm auth={this.props.auth}/>
     }
     const unauthenticated = forms[this.state.form]
-    const unauthenticatedButton = <button className='button'onClick={this.resetForm}> Switch Forms </button>
+    const unauthenticatedLogin = <button className='button switch'onClick={this.resetForm}> Switch to Create </button>
+    const unauthenticatedCreate = <button className='button switch'onClick={this.resetForm}> Switch to Login </button>
     const authenticated = <div></div>
+    const unauthenticatedSwitch = this.state.form == "create" ? unauthenticatedCreate : unauthenticatedLogin
     const bodyForms = this.props.authenticated ? authenticated : unauthenticated
-    const switchButton = this.props.authenticated ? authenticated : unauthenticatedButton
+    const switchButton = this.props.authenticated ? authenticated : unauthenticatedSwitch
 
     return (
-      <div>
+      <div className="loginContainer">
+      <h1 id="mainLogo">Wakaru</h1>
         { bodyForms }
         { switchButton }
       </div>
