@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { VictoryGroup } from 'victory';
 import { VictoryBar } from 'victory';
 import { VictoryLabel } from 'victory';
+import { VictoryLegend } from 'victory';
 
 
 class EmailBreakDownChart extends Component {
@@ -15,25 +16,25 @@ class EmailBreakDownChart extends Component {
         <VictoryGroup
           height={800}
           width={800}
-          domainPadding={40}
           animate={{duration: 2000,onLoad: { duration: 1000 }}}
-          labels={(d) => d.y}
-          labels={["Enjoyment", "Big 5", "Dissatisfaction"]}
-          offset={50}
+          offset={30}
           colorScale={["green", "orange", "red"]}
-          labelComponent={<VictoryLabel dy={30}/>}>
+          >
           <VictoryBar
             data={this.props.data[0]}
-            domain={[0, 100]}
-            offset={50}/>
+            labels={(d) => d.y}
+            style={{ labels: { fill: "white" } }}
+            labelComponent={<VictoryLabel dy={30}/>}/>
           <VictoryBar
             data={this.props.data[1]}
-            domain={[0, 100]}
-            offset={50}/>
+            labels={(d) => d.y}
+            style={{ labels: { fill: "white" } }}
+            labelComponent={<VictoryLabel dy={30}/>}/>
           <VictoryBar
             data={this.props.data[2]}
-            domain={[0, 100]}
-            offset={50}/>
+            labels={(d) => d.y}
+            style={{ labels: { fill: "white" } }}
+            labelComponent={<VictoryLabel dy={30}/>}/>
         </VictoryGroup>
       </div>
     )
