@@ -117,6 +117,11 @@ button, .switch {
   left: 26%
 }
 
+#submitButton {
+  position: relative;
+  left: 0%
+}
+
 #createAccount {
   position: relative;
   left: 26%

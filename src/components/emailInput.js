@@ -63,7 +63,7 @@ class EmailInput extends Component {
             Bad
           </RadioButton>
         </RadioGroup>
-      <button className='submit-button'
+      <button id='submitButton'
         onClick={this.handleSubmit}>
         Submit
       </button>
