@@ -23,11 +23,17 @@ class EmailBreakDownChart extends Component {
           colorScale={["green", "orange", "red"]}
           labelComponent={<VictoryLabel dy={30}/>}>
           <VictoryBar
-            data={this.props.data[0]}/>
+            data={this.props.data[0]}
+            domain={[0, 100]}
+            offset={50}/>
           <VictoryBar
-            data={this.props.data[1]}/>
+            data={this.props.data[1]}
+            domain={[0, 100]}
+            offset={50}/>
           <VictoryBar
-            data={this.props.data[2]}/>
+            data={this.props.data[2]}
+            domain={[0, 100]}
+            offset={50}/>
         </VictoryGroup>
       </div>
     )

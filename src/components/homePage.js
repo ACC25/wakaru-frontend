@@ -22,14 +22,14 @@ class HomePage extends Component {
       token: localStorage.getItem("token"),
       question: "",
       response: email,
-      domain: fixture,
+      domain: fixture.toString(),
       category: category
     }).then((response) => {
       this.setState({newEmail: true})
       this.setState({emailData: response.data})
     })
     .catch((error) => {
-      alert("Invalid login credentials")
+      alert("Email could not be categorized.")
     })
   }
 
