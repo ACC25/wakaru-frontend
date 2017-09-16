@@ -41,7 +41,7 @@ class CreateAccountForm extends Component {
           <input type="text" placeholder="Choose Username" value={this.state.username} onChange={this.handleChangeUsername} />
           <input type="text" placeholder="Create Password" value={this.state.password} onChange={this.handleChangePassword} />
         </label>
-        <input type="submit" value="Create Account" />
+        <input id="createAccount" type="submit" value="Create Account" />
       </form>
     )
   }
