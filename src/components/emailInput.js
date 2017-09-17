@@ -59,6 +59,7 @@ class EmailInput extends Component {
             placeholder="Copy an email into this field for categorization."
             rows={1}
             defaultValue={this.state.email}
+            value={this.state.email}
             onChange={this.handleChange}/>
         <RadioGroup onChange={ this.radioChange }>
           <RadioButton value="0">

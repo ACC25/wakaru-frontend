@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { VictoryGroup } from 'victory';
 import { VictoryBar } from 'victory';
 import { VictoryLabel } from 'victory';
-import { VictoryLegend } from 'victory';
-
 
 class EmailBreakDownChart extends Component {
   constructor(props) {

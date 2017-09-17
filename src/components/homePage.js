@@ -52,8 +52,8 @@ class HomePage extends Component {
         </div>
         <div className="divider">
           { expandPage }
-        </div>
-        <div className="divider">
+          </div>
+          <div className="divider">
           { expandClassification }
         </div>
       </div>
