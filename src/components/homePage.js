@@ -15,6 +15,12 @@ class HomePage extends Component {
     }
 
     this.getEmailCategory = this.getEmailCategory.bind(this)
+    this.resetHomePage = this.resetHomePage.bind(this)
+  }
+
+  resetHomePage() {
+    this.setState({newEmail: false})
+    this.setState({newData: ""})
   }
 
   getEmailCategory (email, fixture, category) {
@@ -42,7 +48,7 @@ class HomePage extends Component {
       <div className="container">
         <div className="divider">
           <BreakDownChart/>
-          <EmailInput onClick={this.getEmailCategory}/>
+          <EmailInput onClick={this.getEmailCategory} resetPage={this.resetHomePage}/>
         </div>
         <div className="divider">
           { expandPage }
