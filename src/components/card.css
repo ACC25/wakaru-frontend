@@ -36,7 +36,8 @@
 }
 
 .overallBreakDown {
-  padding-left: 39%;
+  vertical-align: text-top;
+  padding-left: 45%;
   width: 28%;
 }
 
