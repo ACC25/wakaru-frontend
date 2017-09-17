@@ -20,7 +20,7 @@
 }
 
 #breakdownTitle {
-  padding-left: 33%;
+  padding-left: 36.5%;
 }
 
 .svg {
@@ -36,7 +36,8 @@
 }
 
 .overallBreakDown {
-  padding-left: 39%;
+  vertical-align: text-top;
+  padding-left: 45%;
   width: 28%;
 }
 
@@ -78,7 +79,7 @@ input[type="text" i] {
 
 input[type="submit" i] {
   position: relative;
-  left: 37%;
+  left: 37.5%;
   padding: 10px 15px 11px;
   font-size: 18px;
   background-color: #1276a8;
