@@ -1,6 +1,5 @@
 {
   "name": "wakaru-frontend",
-  "homepage": "https://acc25.github.io/wakaru-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
