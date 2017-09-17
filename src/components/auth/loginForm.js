@@ -24,7 +24,7 @@ class LoginForm extends Component {
 
   getToken(event) {
     event.preventDefault()
-    axios.get('http://localhost:3000/api/v1/session', {
+    axios.get('https://wakaru-backend.herokuapp.com/api/v1/session', {
       params: {
       username: this.state.username,
       password: this.state.password

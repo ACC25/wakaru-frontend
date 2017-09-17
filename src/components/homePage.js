@@ -24,7 +24,7 @@ class HomePage extends Component {
   }
 
   getEmailCategory (email, fixture, category) {
-    axios.post('http://localhost:3000/api/v1/category', {
+    axios.post('https://wakaru-backend.herokuapp.com/api/v1/category', {
       token: localStorage.getItem("token"),
       question: "",
       response: email,

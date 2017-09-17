@@ -24,7 +24,7 @@ class CreateAccountForm extends Component {
 
   postAccount(event) {
     event.preventDefault()
-    axios.post('http://localhost:3000/api/v1/session', { username: this.state.username, password: this.state.password}
+    axios.post('https://wakaru-backend.herokuapp.com/api/v1/session', { username: this.state.username, password: this.state.password}
   ).then((response) => {
     localStorage.setItem("token", response.data["token"])
     this.props.auth()
