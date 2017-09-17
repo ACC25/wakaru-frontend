@@ -13,12 +13,20 @@ class EmailInput extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleReset = this.handleReset.bind(this)
     this.radioChange = this.radioChange.bind(this)
   }
 
   componentDidMount(){
     this.textarea.focus();
     autosize(this.textarea);
+  }
+
+  handleReset() {
+    this.setState({email: ""})
+    this.setState({fixture: 0})
+    this.setState({category: null})
+    this.props.resetPage()
   }
 
   handleChange(event) {
@@ -66,6 +74,10 @@ class EmailInput extends Component {
       <button id='submitButton'
         onClick={this.handleSubmit}>
         Submit
+      </button>
+      <button id='resetButton'
+        onClick={this.handleReset}>
+        Reset
       </button>
       </div>
     )

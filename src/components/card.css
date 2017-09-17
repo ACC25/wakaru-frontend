@@ -122,6 +122,11 @@ button, .switch {
   left: 0%
 }
 
+#resetButton {
+  position: relative;
+  left: 77.5%
+}
+
 #createAccount {
   position: relative;
   left: 26%
