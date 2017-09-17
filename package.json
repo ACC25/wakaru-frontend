@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate-css-styled-components": "0.0.18",
     "autosize": "^4.0.0",
     "axios": "^0.16.2",
     "d3": "^4.10.2",
