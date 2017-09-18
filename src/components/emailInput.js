@@ -38,8 +38,13 @@ class EmailInput extends Component {
   }
 
   radioChange(event) {
-    this.setState({category: event})
-    this.setState({fixture: 1})
+    if (event == "") {
+      this.setState({category: null})
+      this.setState({fixture: 0})
+    } else {
+      this.setState({category: event})
+      this.setState({fixture: 1})
+    }
   }
 
   render() {
@@ -61,7 +66,10 @@ class EmailInput extends Component {
             defaultValue={this.state.email}
             value={this.state.email}
             onChange={this.handleChange}/>
-        <RadioGroup onChange={ this.radioChange }>
+        <RadioGroup onChange={ this.radioChange } value="">
+          <RadioButton value="">
+            No Fixture
+          </RadioButton>
           <RadioButton value="0">
             Good
           </RadioButton>

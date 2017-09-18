@@ -1,4 +1,5 @@
 .divider {
+  margin-top: 3%;
   display: flex;
   flex-direction: row;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -14,6 +15,7 @@
 
 .email {
   padding-left: 30%;
+  top: 2%;
   position: absolute;
   float: left;
 
@@ -24,6 +26,7 @@
 }
 
 .svg {
+  margin-top: 5%;
   padding-left: 13%;
   float: left;
   align-content: center;
