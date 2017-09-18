@@ -50,11 +50,13 @@ class HomePage extends Component {
           <BreakDownChart/>
           <EmailInput onClick={this.getEmailCategory} resetPage={this.resetHomePage}/>
         </div>
-        <div className="divider">
+        <div className="dividerGraph">
           { expandPage }
           </div>
-          <div className="divider">
+          <div className="dividerGraph">
           { expandClassification }
+        </div>
+        <div className="dividerPrediction">
         </div>
       </div>
     )

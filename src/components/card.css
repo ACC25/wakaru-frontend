@@ -1,12 +1,24 @@
 .divider {
-  margin-top: 3%;
+  margin-top: 3.5%;
   display: flex;
   flex-direction: row;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   align-items: center;
 }
-
+.dividerGraph {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  align-items: center;
+}
+.dividerPrediction {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-bottom: 4%;
+}
 .category {
   height: auto;
   width: auto;
@@ -18,12 +30,8 @@
   top: 2%;
   position: absolute;
   float: left;
-
 }
 
-#breakdownTitle {
-  padding-left: 35.5%;
-}
 
 .svg {
   margin-top: 5%;
@@ -41,7 +49,7 @@
 .overallBreakDown {
   vertical-align: text-top;
   padding-left: 45%;
-  width: 28%;
+  padding-bottom: 2%;
 }
 
 .logoContainer {
@@ -121,9 +129,13 @@ button, .switch {
   left: 26%
 }
 
+#breakdownTitle {
+  padding-left: 35.5%;
+}
+
 #submitButton {
   position: relative;
-  left: 0%
+  left: 0%;
 }
 
 #resetButton {
