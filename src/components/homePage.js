@@ -33,7 +33,7 @@ class HomePage extends Component {
   }
 
   getBreakdown() {
-    axios.get('http://localhost:3000/api/v1/category', {
+    axios.get('https://wakaru-backend.herokuapp.com/api/v1/category', {
       params: { "token": localStorage.getItem("token")}
     }).then((response) => {
       this.setState({categoryData: response.data})
