@@ -22,17 +22,17 @@ class EmailBreakDownChart extends Component {
             data={this.props.data[0]}
             labels={(d) => d.y}
             style={{ labels: { fill: "white" } }}
-            labelComponent={<VictoryLabel dy={30}/>}/>
+            labelComponent={<VictoryLabel dy={50}/>}/>
           <VictoryBar
             data={this.props.data[1]}
             labels={(d) => d.y}
             style={{ labels: { fill: "white" } }}
-            labelComponent={<VictoryLabel dy={30}/>}/>
+            labelComponent={<VictoryLabel dy={50}/>}/>
           <VictoryBar
             data={this.props.data[2]}
             labels={(d) => d.y}
             style={{ labels: { fill: "white" } }}
-            labelComponent={<VictoryLabel dy={30}/>}/>
+            labelComponent={<VictoryLabel dy={50}/>}/>
         </VictoryGroup>
       </div>
     )
