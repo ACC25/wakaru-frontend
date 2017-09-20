@@ -11,11 +11,34 @@ class HomePage extends Component {
     super(props)
     this.state = {
       newEmail: false,
-      emailData: ""
+      newCategoryData: "",
+      emailData: "",
+      categoryData: []
     }
 
     this.getEmailCategory = this.getEmailCategory.bind(this)
     this.resetHomePage = this.resetHomePage.bind(this)
+    this.getBreakdown = this.getBreakdown.bind(this)
+    this.refresh = this.refresh.bind(this)
+  }
+
+  componentDidMount() {
+    this.getBreakdown()
+  }
+
+  refresh() {
+    if (this.state.newCategoryData == true) {
+      this.getBreakdown()
+    }
+  }
+
+  getBreakdown() {
+    axios.get('http://localhost:3000/api/v1/category', {
+      params: { "token": localStorage.getItem("token")}
+    }).then((response) => {
+      this.setState({categoryData: response.data})
+      this.setState({newCategoryData: false})
+    })
   }
 
   resetHomePage() {
@@ -33,6 +56,7 @@ class HomePage extends Component {
     }).then((response) => {
       this.setState({newEmail: true})
       this.setState({emailData: response.data})
+      this.setState({newCategoryData: true})
     })
     .catch((error) => {
       alert("Email could not be categorized.")
@@ -47,7 +71,8 @@ class HomePage extends Component {
     return(
       <div className="container">
         <div className="divider">
-          <BreakDownChart/>
+          { this.refresh() }
+          <BreakDownChart categoryData={this.state.categoryData}/>
           <EmailInput onClick={this.getEmailCategory} resetPage={this.resetHomePage}/>
         </div>
         <div className="dividerGraph">

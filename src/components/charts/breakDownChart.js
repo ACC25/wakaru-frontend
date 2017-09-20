@@ -7,25 +7,11 @@ import '../card.css';
 class BreakDownChart extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      loaded: false,
-      categoryData: []
-    }
-    this.getBreakDown = this.getBreakDown.bind(this)
+    this.state = {}
   }
 
-  getBreakDown(event) {
-    axios.get('https://wakaru-backend.herokuapp.com/api/v1/category', {
-      params: { "token": localStorage.getItem("token")}
-    }).then((response) => {
-      this.setState({categoryData: response.data})
-      this.setState({loaded: true})
-    })
-  }
 
   render() {
-    const loadGraph = <VictoryPie data={this.state.categoryData}/>
-    const data = this.state.loaded == false ? this.getBreakDown() : loadGraph
     return(
       <div className="category">
         <h1 id="breakdownTitle">Wakaru</h1>
@@ -38,7 +24,7 @@ class BreakDownChart extends Component {
                       height={300}
                       innerRadius={75}
                       title={"history breakdown of documented emails"}
-                      data={this.state.categoryData}/>
+                      data={this.props.categoryData}/>
         </svg>
       </div>
     )
